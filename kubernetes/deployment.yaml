@@ -20,6 +20,10 @@ spec:
       labels:
         app: ecsdemo-nodejs
     spec:
+      tolerations:
+        - key: kubernetes.io/arch
+          value: amd64
+          effect: NoSchedule
       containers:
       - image: brentley/ecsdemo-nodejs:latest
         imagePullPolicy: Always
